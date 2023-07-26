@@ -1,0 +1,3 @@
+Based on the average of danceability, energy and valence of the listerns top 100 songs their aura might be Purple since danceability is highest followed by energy and  then valence.
+
+It may be better to calculate their aura based while also including how many times the listener played each track.  They very well could have played the first track 100000 times and the 100th track 100 times which would cause the aura to be inaccurate.

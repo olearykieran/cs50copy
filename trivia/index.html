@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            const checkMultipleChoiceAnswer = (selectedAnswer) => {
+              const correctAnswer = 'Mars';
+              const resultMessage = document.querySelector('#multipleChoiceResultMessage');
+
+              if (selectedAnswer === correctAnswer) {
+                resultMessage.textContent = 'Correct!';
+                document.querySelector(`#${selectedAnswer}`).classList.add('correct');
+              } else {
+                resultMessage.textContent = 'Incorrect';
+                document.querySelector(`#${selectedAnswer}`).classList.add('incorrect');
+              }
+
+              setTimeout(() => {
+                resultMessage.textContent = '';
+                document.querySelector(`#${selectedAnswer}`).classList.remove('correct', 'incorrect');
+              }, 3000);
+            };
+
+            const checkFreeResponseAnswer = () => {
+                const userAnswer = document.querySelector('#userAnswer').value.trim();
+                const correctAnswer = 'Paris';
+                const resultMessage = document.querySelector('#freeResponseResultMessage');
+
+                if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                    resultMessage.textContent = 'Correct!';
+                    document.querySelector('#userAnswer').classList.add('correct');
+                } else {
+                    resultMessage.textContent = 'Incorrect';
+                    document.querySelector('#userAnswer').classList.add('incorrect');
+                }
+
+                setTimeout(() => {
+                    resultMessage.textContent = '';
+                    document.querySelector('#userAnswer').classList.remove('correct', 'incorrect');
+                }, 3000);
+            };
+
+            document.addEventListener('DOMContentLoaded', () => {
+                const userAnswerInput = document.querySelector('#userAnswer');
+                userAnswerInput.addEventListener('keypress', (event) => {
+                    if (event.key === 'Enter') {
+                        event.preventDefault();
+                        checkFreeResponseAnswer();
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice</h2>
+                <hr>
+                <h3>
+                    Question: Which planet is known as the "Red Planet"?
+                </h3>
+                <button onclick="checkMultipleChoiceAnswer('Jupiter')" id="Jupiter">Jupiter</button>
+                <button onclick="checkMultipleChoiceAnswer('Saturn')" id="Saturn">Saturn</button>
+                <button onclick="checkMultipleChoiceAnswer('Mars')" id="Mars">Mars</button>
+                <button onclick="checkMultipleChoiceAnswer('Neptune')" id="Neptune">Neptune</button>
+
+                <p id="multipleChoiceResultMessage"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>
+                  Question: What is the capital city of France?
+                </h3>
+                <input type="text" id="userAnswer" placeholder="Enter your answer">
+                <button onclick="checkFreeResponseAnswer()">Submit</button>
+
+              <p id="freeResponseResultMessage"></p>
+            </div>
+        </div>
+    </body>
+</html>

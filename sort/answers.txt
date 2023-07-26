@@ -1,0 +1,12 @@
+sort1 uses: Bubble Sort
+
+How do you know?: This algorithm performed better on large sorted lists than sort 3 which helped me deduce that it is bubble sort (omega case is n)
+
+sort2 uses: Merge Sort
+
+How do you know?: This algorithm outperformed the others on large random & reveresed lists
+
+sort3 uses: Selection Sort
+
+How do you know?: This algorithm performed worse on large sorted lists than sort 1 which helped me deduce that it is selection sort (omega case is n squared)
+

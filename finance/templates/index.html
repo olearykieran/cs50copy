@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<div class="container">
+  {% if holdings %}
+      <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+              <tr>
+                  <th>Stock Symbol</th>
+                  <th>Shares</th>
+                  <th>Current Price</th>
+                  <th>Total Value</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for holding in holdings %}
+              <tr>
+                  <td>{{ holding.symbol }}</td>
+                  <td>{{ holding.total_shares }}</td>
+                  <td>{{ holding.current_price }}</td>
+                  <td>{{ holding.total_value }}</td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+  {% else %}
+      <table class="table table-striped table-bordered">
+          <thead class="thead-dark">
+              <tr>
+                  <th>Stock Symbol</th>
+                  <th>Shares</th>
+                  <th>Current Price</th>
+                  <th>Total Value</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>NULL</td>
+                  <td>NULL</td>
+                  <td>NULL</td>
+                  <td>NULL</td>
+              </tr>
+          </tbody>
+      </table>
+  {% endif %}
+
+  <p>Cash Balance: {{ cash }}</p>
+  <p>Grand Total: {{ grand_total }}</p>
+</div>
+{% endblock %}

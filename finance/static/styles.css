@@ -1,0 +1,46 @@
+/* Size for brand */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue {
+    color: #4267B2;
+}
+nav .navbar-brand .red {
+    color: #F02849;
+}
+nav .navbar-brand .yellow {
+    color: #FDBB00;
+}
+nav .navbar-brand .green {
+    color: #42B72A;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: inline-block;
+    width: 120px;
+}
+.form-group input {
+    display: inline-block;
+    width: 200px;
+    padding: 5px;
+}
+
+.table-white {
+    background-color: #fff !important;
+}

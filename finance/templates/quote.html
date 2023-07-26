@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<form action="/quote" method="POST">
+    <div class="form-group">
+        <label for="symbol" class="text-white" style="font-size: 1.5em;">Symbol:</label>
+        <input type="text" id="symbol" name="symbol" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Get Quote</button>
+</form>
+{% endblock %}

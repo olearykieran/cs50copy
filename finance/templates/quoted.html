@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <h2 style="font-size: 40px; color: white;">Quoted</h2>
+    <p style="font-size: 30px; color: white;">Symbol: {{ symbol }}</p>
+    <p style="font-size: 30px; color: white;">Name: {{ name }}</p>
+    <p style="font-size: 30px; color: white;">Price: {{ price|usd }}</p>
+{% endblock %}
